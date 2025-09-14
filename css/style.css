@@ -6,14 +6,12 @@
 }
 
 :root{
-  --bg:#F7F6F4; /* warm light */
-  --accent:#D95F45; /* warm coral */
-  --muted:#6B6B6B;
-  --card:#FFFFFF;
-  --max-width:1200px;
-  --gap:24px;
+  --accent:#e76969; /* warm coral */
   --accent-dark:#B24B3A;
-  --hero-font:'Segoe UI', Roboto, Arial, sans-serif;
+  --hero-font: sans-serif;
+  --black: #000;
+  --white: #fff;
+  --info-card-color: #ff6f61;
 }
 
 body {
@@ -44,7 +42,7 @@ nav{
   font-size:20px;
   font-weight: bold;
   letter-spacing: 3px;
-  color:black;
+  color:var(--black);
   white-space:nowrap;
 }
 
@@ -62,7 +60,7 @@ nav{
 
 .hero-left {
   padding: 85px;
-  font-family: sans-serif;
+  font-family: var(--hero-font);
 }
 
 .hero-left h1 {
@@ -80,7 +78,7 @@ nav{
   background: var(--accent);
   border: none;
   padding: 12px 60px;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -93,7 +91,7 @@ nav{
 
 .second {
   display: grid;
-  font-family: sans-serif;
+  font-family: var(--hero-font);
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   padding: 100px;
@@ -119,8 +117,10 @@ nav{
 }
 
 .info-card {
-  background: #ff6f61;
-  margin: 75px 50px 75px 0px;
+  background: var(--info-card-color);
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 50px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -152,4 +152,84 @@ nav{
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+
+/* Mobiles (≤768px) */
+@media (max-width: 768px) {
+  nav {
+    gap: 32px;
+  }
+
+  .nav-list {
+    gap: 32px;
+  }
+
+  .nav-list li{
+    font-size:15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .hero-left {
+    padding: 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 28px;
+  }
+
+  .hero-left p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero-right img {
+    height: 460px;
+  }
+
+  .second {
+    padding: 50px;
+  }
+
+  .gallery {
+    grid-template-rows: 190px 180px;
+  }
+
+  .info-card {
+    margin-right: 15px;
+  }
+
+  .info-card h2 {
+    font-size: 28px;
+  }
+}
+
+/* Small phones (≤480px) */
+@media (max-width: 480px) {
+  nav {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hero {
+    display: block;
+  }
+
+  .second {
+    display: block;
+  }
+
+  .info-card {
+    margin-right: 0px;
+    margin-top: 30px;
+  }
 }
